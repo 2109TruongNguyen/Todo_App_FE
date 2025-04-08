@@ -136,7 +136,7 @@ interface SidebarProps {
 function CustomAppTitle() {
   return (
     <Stack direction="row" alignItems="center" spacing={2}>
-      <img src="src/assets/images/Logo02.png" alt="Logo" width={40} height={40} />
+      <img src="https://res.cloudinary.com/dkzn3xjwt/image/upload/v1744118798/c435280f-ab8c-478b-8a38-786fbd5e681a.png" alt="Logo" width={40} height={40} />
       <Typography variant="h6">Todo App</Typography>
     </Stack>
   );
