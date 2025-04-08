@@ -68,7 +68,7 @@ export default function RegisterPage() {
         <MDBCard className="p-5 border-0" style={{ width: "50%" }}>
           <MDBCardBody>
             <div className="text-center mb-4">
-              <img src="/logo.png" alt="Logo" height="40" className="mb-2" />
+              <img src="https://res.cloudinary.com/dkzn3xjwt/image/upload/v1744118798/c435280f-ab8c-478b-8a38-786fbd5e681a.png" alt="Logo" height="70" width="70" className="mb-2" />
               <MDBTypography tag="h4" className="fw-bold text-dark">Sign Up</MDBTypography>
             </div>
             <form onSubmit={handleSubmit}>
