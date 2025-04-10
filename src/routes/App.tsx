@@ -8,6 +8,7 @@ import PrivateRoute from "./PrivateRoute";
 import { AuthProvider } from "../context/AuthContext";
 import {PAGES} from "../config/Constant";
 import ProfilePage from "../pages/private/ProfilePage";
+import GoogleLoginHandler from "../pages/public/GoogleLoginHandler";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             // Public Pages
             <Route path={PAGES.LOGIN_PAGE} element={<LoginPage />} />
             <Route path={PAGES.REGISTER_PAGE} element={<RegisterPage />} />
+            <Route path={PAGES.GOOGLE_HANDLER} element={<GoogleLoginHandler />} />
           </Routes>
         </AuthProvider>
       </BrowserRouter>

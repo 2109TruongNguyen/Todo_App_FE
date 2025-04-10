@@ -1,12 +1,13 @@
 const API ={
-    //BASE_URL: "http://localhost:5000",
-    BASE_URL: "https://todo-app-be-6p6d.onrender.com",
+    BASE_URL: "http://localhost:5000",
+    //BASE_URL: "https://todo-app-be-6p6d.onrender.com",
 
     Authentication : {
         LOGIN: "/api/auth/login",
         REGISTER: "/api/auth/register",
         LOGOUT: "/api/auth/logout",
         REFRESH: "/api/auth/refresh-token",
+        GOOGLE: "/api/auth/google-login",
     },
 
     User : {

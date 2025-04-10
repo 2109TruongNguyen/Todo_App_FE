@@ -3,6 +3,7 @@ export const PAGES ={
     REGISTER_PAGE: '/register',
     HOME_PAGE: '/',
     PROFILE_PAGE: '/profile',
+    GOOGLE_HANDLER: '/google-handler',
 }
 
 export const STATUS_CODE = {

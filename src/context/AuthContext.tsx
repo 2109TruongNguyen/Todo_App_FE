@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import API from "../config/API";
 import { PAGES, STATUS_CODE } from "../config/Constant";
 import { publicApiInstance, apiInstance } from "../config/AxiosConfig";
@@ -36,6 +36,9 @@ import { ReactNode } from "react";
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const skipCheck = location.pathname === "/google-handler";
+
 
   const [authTokens, setAuthTokens] = useState<string | null>(() =>
     localStorage.getItem("refreshToken")
@@ -115,10 +118,12 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const initAuth = async () => {
-      await checkRefreshToken(); 
+      if (!skipCheck) {
+        await checkRefreshToken();
+      }
   
       if (user === null && authTokens !== null) {
-        await getUserInformation(); 
+        await getUserInformation();
       }
   
       setLoading(false);
@@ -126,6 +131,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   
     initAuth();
   }, []);
+  
 
   return (
     <AuthContext.Provider value={{ user, authTokens, loginUser, logoutUser }}>
